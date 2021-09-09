@@ -1,0 +1,14 @@
+version: '3.3'
+volumes:
+  data:
+services:
+  db:
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    volumes:
+      - data:/var/lib/postgres
+    environment:
+      - POSTGRES_USER=api-vendas
+      - POSTGRES_PASSWORD=1234
+      - POSTGRES_DB=vendas
